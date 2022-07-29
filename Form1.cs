@@ -34,6 +34,9 @@ namespace FileManager_OOP_WinForm
 
         private void ReadLine(string command)
         {
+            var console_ui = new ConsoleUserInterface();
+            var manager = new FileManagerLogic(console_ui);//если класс наследуется от интерфейса то его можно вставлять как тип этого интерфейса
+            manager.Start();
 
         }
     }
