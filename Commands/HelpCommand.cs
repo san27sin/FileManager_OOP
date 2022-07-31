@@ -9,7 +9,6 @@ namespace FileManager_OOP_WinForm.Commands
     public class HelpCommand : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
-        private readonly FileManagerLogic _fileManager;
 
         public HelpCommand(IUserInterface user,FileManagerLogic fileManager)
         {
@@ -24,7 +23,7 @@ namespace FileManager_OOP_WinForm.Commands
             _user.WriteLine("Файловый менеджер поддерживает следующие команды:");
             foreach(var command in _fileManager.Commands)
             {
-                _user.WriteLine($"    {command.Key}\t{command.Value.Description}")
+                _user.WriteLine($"    {command.Key}\t{command.Value.Description}");
             }
         }
     }

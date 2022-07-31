@@ -27,6 +27,8 @@ namespace FileManager_OOP_WinForm
             var help_command = new Commands.HelpCommand(user,this);
             var quit_command = new Commands.QuitCommand(this);
 
+
+            //Можно автоматизировать процесс заполнения командами словаря с помощью рефлексии
             Commands = new Dictionary<string, Commands.Base.FileManagerCommand>
             {
                 //сюда добавляем команды нашего файлевого менеджера
@@ -36,12 +38,14 @@ namespace FileManager_OOP_WinForm
                 {"?", help_command },
                 {"help", help_command },
                 {"quit",quit_command},
-                {"exit",quit_command}
+                {"exit",quit_command},
+                {"cd", new Commands.ChangeDirectoryCommand(_user,this) }
             };
         }
        
         public void Start()
         {
+            //вся логика у нас здесь
             _user.WriteLine("Файловый менеджер");
             //enter command _ info
             do

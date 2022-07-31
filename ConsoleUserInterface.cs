@@ -8,6 +8,7 @@ namespace FileManager_OOP_WinForm
 {
     class ConsoleUserInterface : IUserInterface
     {
+        //надо будет все переделать
         public void Write(string str)
         {
             Console.WriteLine(str);
