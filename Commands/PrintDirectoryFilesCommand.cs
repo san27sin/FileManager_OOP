@@ -21,6 +21,7 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
+            //для этого метода написать tree
             var directory = _fileManager.CurrentDirectory;
             _user.WriteLine($"Содержимое директории {directory}:");
 

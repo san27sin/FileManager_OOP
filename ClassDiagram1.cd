@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="FileManager_OOP_WinForm.Program" Collapsed="true">
-    <Position X="1.5" Y="7.25" Width="1.5" />
+    <Position X="1.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FileManager_OOP_WinForm.Form1" Collapsed="true">
-    <Position X="1.5" Y="6.25" Width="1.5" />
+    <Position X="1.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgBAAAIAACAAAAAAAACAAAACAAAIAQAAEEAAAIAAAAA=</HashCode>
+      <HashCode>AgBAAAIAACAAABAAAACAAAACAAAIAQAAEEAAAIAAAAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -21,13 +21,13 @@
       <FileName>FileManagerLogic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FileManager_OOP_WinForm.ConsoleUserInterface" BaseTypeListCollapsed="true">
-    <Position X="2" Y="2" Width="1.5" />
+  <Class Name="FileManager_OOP_WinForm.WinFormUserInterface" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIBAAAAAAAAAAAAIAAAQgAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>ConsoleUserInterface.cs</FileName>
+      <HashCode>AAgAAAAAAAAAACAIAAAAAAAgAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinFormUserInterface.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.393" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="FileManager_OOP_WinForm.Commands.ChangeDirectoryCommand">
     <Position X="13.25" Y="6.25" Width="1.5" />
@@ -48,7 +48,7 @@
     <TypeIdentifier />
   </Class>
   <Class Name="System.Windows.Forms.Form" Collapsed="true">
-    <Position X="1.5" Y="4.75" Width="1.5" />
+    <Position X="1.5" Y="6.25" Width="1.5" />
     <NestedTypes>
       <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
         <TypeIdentifier />
@@ -85,9 +85,9 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="FileManager_OOP_WinForm.IUserInterface">
-    <Position X="13.5" Y="0.75" Width="1.5" />
+    <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAIAAAQgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAAAAAAIAAAAAAAgAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>IUserInterface.cs</FileName>
     </TypeIdentifier>
   </Interface>

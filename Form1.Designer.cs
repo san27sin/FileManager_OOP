@@ -34,6 +34,7 @@ namespace FileManager_OOP_WinForm
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -48,6 +49,7 @@ namespace FileManager_OOP_WinForm
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.treeView1);
             this.splitContainer2.Panel1.Controls.Add(this.button1);
             this.splitContainer2.Panel1.Controls.Add(this.textBox1);
@@ -64,7 +66,7 @@ namespace FileManager_OOP_WinForm
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(517, 427);
+            this.treeView1.Size = new System.Drawing.Size(517, 406);
             this.treeView1.TabIndex = 2;
             // 
             // button1
@@ -94,6 +96,15 @@ namespace FileManager_OOP_WinForm
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 417);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,8 +128,9 @@ namespace FileManager_OOP_WinForm
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.TreeView treeView1;
+        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.Label label1;
     }
 }
 

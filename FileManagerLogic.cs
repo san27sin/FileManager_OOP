@@ -46,11 +46,11 @@ namespace FileManager_OOP_WinForm
         public void Start()
         {
             //вся логика у нас здесь
-            _user.WriteLine("Файловый менеджер");
+            _user.WriteLabel("Файловый менеджер");
             //enter command _ info
             do
             {
-                var input = _user.ReadLine(">", false);
+                var input = _user.Read();
                 var args = input.Split(' ');
                 var command_name = args[0];
 
@@ -62,8 +62,8 @@ namespace FileManager_OOP_WinForm
 
                 if(!Commands.TryGetValue(command_name,out var command))
                 {
-                    _user.WriteLine($"Неизвестная команда {command}");
-                    _user.WriteLine("Для справки введите help");
+                    _user.WriteLabel($"Неизвестная команда {command}");
+                    _user.WriteLabel("Для справки введите help");
                 }
 
                 try
@@ -72,10 +72,11 @@ namespace FileManager_OOP_WinForm
                 }
                 catch(Exception error)
                 {
-                    _user.WriteLine($"При выполнение команды {command} произошла ошибка:");
-                    _user.WriteLine(error.Message);
+                    _user.WriteLabel($"При выполнение команды {command} произошла ошибка:");
+                    _user.WriteLabel(error.Message);
                 }
 
+                /*
                 switch (input)
                 {
                     case "quit":
@@ -93,7 +94,7 @@ namespace FileManager_OOP_WinForm
                         break;
 
                 }
-
+                */
             } while (_canWork);
 
             //вся логика будет сосредоточена там

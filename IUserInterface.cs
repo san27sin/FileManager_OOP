@@ -8,12 +8,11 @@ namespace FileManager_OOP_WinForm
 {
     public interface IUserInterface
     {
-        //здесь предусмотреть все методы которые будут нужны для наследование классов
-        void WriteLine(string str);//умеет писать строку
-        string ReadLine(string Prompt,bool PromptNewLine = true);//умеет читать
+        void WriteTreeView(string str);//умеет писать строку
+        void WriteListview(string str);
+        void WriteLabel(string str);
 
-        int ReadInt(string Prompt, bool PromptNewLine = true);
+        string Read();//умеет читать
 
-        double ReadDouble(string Prompt, bool PromptNewLine = true);
     }
 }

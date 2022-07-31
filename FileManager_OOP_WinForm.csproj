@@ -52,7 +52,7 @@
     <Compile Include="Commands\ListDrivesCommand.cs" />
     <Compile Include="Commands\PrintDirectoryFilesCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
-    <Compile Include="ConsoleUserInterface.cs" />
+    <Compile Include="WinFormUserInterface.cs" />
     <Compile Include="FileManagerLogic.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
