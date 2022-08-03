@@ -24,12 +24,14 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
+            /*
             DriveInfo[] drives = DriveInfo.GetDrives();
             _user.WriteLine($"В файловой системе существует дисков {drives.Length}");
             foreach(var drive in drives)
             {
                 _user.WriteLine($"      {drive.Name}");
             }
+            */
         }
     }
 }

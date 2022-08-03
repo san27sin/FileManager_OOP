@@ -15,7 +15,7 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
-            _fileManager.Stop();
+            Program.frm.Close();
         }
     }
 }

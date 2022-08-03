@@ -25,36 +25,33 @@ namespace FileManager_OOP_WinForm.Commands
         {
             if (args.Length != 2 || string.IsNullOrWhiteSpace(args[1]))//ругаемся при таких обстаятельствах
             {
-                _user.WriteLine("Для команды смены каталога необходимо указать один параметр - целевой каталог");
+                _user.WriteTextBox("Для команды смены каталога необходимо указать один параметр - целевой каталог");
                 return;
             }
 
             var dir_path = args[1];
-            DirectoryInfo directory;
             if (dir_path == "..")
             {
-                directory = _fileManagerLogic.CurrentDirectory.Parent;
-                if(directory is null)
+                DirectoryInfo dir = new DirectoryInfo(DirectoryMemory.CurrentDir);
+                DirectoryMemory.CurrentDir = dir.Parent.FullName;
+                if(DirectoryMemory.CurrentDir is null)
                 {
-                    _user.WriteLine("Невозможно подняться выше по дереву каталогов");
+                    _user.WriteTextBox("Невозможно подняться выше по дереву каталогов");
                     return;
                 }
-
-            }
-            else if(!Path.IsPathRooted(dir_path))
-                dir_path = Path.Combine(_fileManagerLogic.CurrentDirectory.FullName, dir_path);
-            directory = new DirectoryInfo(dir_path);
-
-
-            if (!directory.Exists)
-            {
-                _user.WriteLine($"Директория {directory} не существует!");
+                _user.DirectorySerialize();//сохраняем директорию
                 return;
             }
 
-            _fileManagerLogic.CurrentDirectory = directory;
-            _user.WriteLine($"Текущая директория изменена на {directory.FullName}");
-            Directory.SetCurrentDirectory(directory.FullName);
+
+            if (!Directory.Exists(dir_path))
+            {
+                _user.WriteTextBox($"Директория {dir_path} не существует!");
+                return;
+            }
+            DirectoryMemory.CurrentDir = dir_path;
+            _user.WriteTextBox($"Текущая директория изменена на {dir_path}");
+            _user.DirectorySerialize();//сохраняем директорию
 
         }
     }

@@ -9,14 +9,9 @@ namespace FileManager_OOP_WinForm
 {
     public class FileManagerLogic
     {
-        private bool _canWork = true;//это как заглушка
-
         private readonly IUserInterface _user;//взаимодействие с пользователем
-        public IReadOnlyDictionary<string, Commands.Base.FileManagerCommand> Commands {get;}//словарь с командами
+        public IReadOnlyDictionary<string, Commands.Base.FileManagerCommand> Commands { get; }//словарь с командами
 
-
-
-        public DirectoryInfo CurrentDirectory { get; set; } = new DirectoryInfo("c:\\");
 
         public FileManagerLogic(IUserInterface user)//комманда будет считываться через winform
         {
@@ -24,8 +19,9 @@ namespace FileManager_OOP_WinForm
 
             var drives = new Commands.ListDrivesCommand(user);
             var list_dir_command = new Commands.PrintDirectoryFilesCommand(user, this);
-            var help_command = new Commands.HelpCommand(user,this);
+            var help_command = new Commands.HelpCommand(user, this);
             var quit_command = new Commands.QuitCommand(this);
+            var cd_command = new Commands.ChangeDirectoryCommand(_user, this);
 
 
             //Можно автоматизировать процесс заполнения командами словаря с помощью рефлексии
@@ -39,70 +35,44 @@ namespace FileManager_OOP_WinForm
                 {"help", help_command },
                 {"quit",quit_command},
                 {"exit",quit_command},
-                {"cd", new Commands.ChangeDirectoryCommand(_user,this) }
+                {"cd", cd_command }
             };
         }
-       
+
         public void Start()
         {
             //вся логика у нас здесь
-            _user.WriteLabel("Файловый менеджер");
-            //enter command _ info
-            do
+
+            var input = _user.Read();
+            var args = input.Split(' ');
+            var command_name = args[0];
+
+            if (command_name == "quit")
             {
-                var input = _user.Read();
-                var args = input.Split(' ');
-                var command_name = args[0];
+                Program.frm.Close();//реализовать в виде команды
+                return;
+            }
+                
 
-                if(command_name == "quit")//реализовать в виде команды
-                {
-                    _canWork = false;
-                    continue;
-                }
 
-                if(!Commands.TryGetValue(command_name,out var command))
-                {
-                    _user.WriteLabel($"Неизвестная команда {command}");
-                    _user.WriteLabel("Для справки введите help");
-                }
+            if (!Commands.TryGetValue(command_name, out var command))
+            {
+                _user.WriteTextBox($"Неизвестная команда {command}");
+                _user.WriteTextBox("Для справки введите help");
+            }
 
-                try
-                {
-                    command.Execute(args);
-                }
-                catch(Exception error)
-                {
-                    _user.WriteLabel($"При выполнение команды {command} произошла ошибка:");
-                    _user.WriteLabel(error.Message);
-                }
+            _user.DirectoryCheck();//проверка директории
 
-                /*
-                switch (input)
-                {
-                    case "quit":
-                        _canWork = false;
-                        break;
-
-                    case "int":
-                        var int_value = _user.ReadInt("Введите целое число >", false);
-                        _user.WriteLine($"Введено: {int_value}");
-                        break;
-
-                    case "double":
-                        var double_value = _user.ReadDouble("Введите вещественное число >", false);
-                        _user.WriteLine($"Введено: {double_value}");
-                        break;
-
-                }
-                */
-            } while (_canWork);
-
+            try
+            {
+                command.Execute(args);//идет выполнение команды
+            }
+            catch (Exception error)
+            {
+                _user.WriteTextBox($"При выполнение команды {command} произошла ошибка:");
+                _user.WriteTextBox(error.Message);
+            }
             //вся логика будет сосредоточена там
-        }
-
-        public void Stop()
-        {
-            _canWork = false;
         }
     }
 }
