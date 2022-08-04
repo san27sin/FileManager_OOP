@@ -52,7 +52,6 @@ namespace FileManager_OOP_WinForm.Commands
             DirectoryMemory.CurrentDir = dir_path;
             _user.WriteTextBox($"Текущая директория изменена на {dir_path}");
             _user.DirectorySerialize();//сохраняем директорию
-
         }
     }
 }

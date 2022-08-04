@@ -23,7 +23,20 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
-            var directory = DirectoryMemory.CurrentDir;
+            string directory;
+            if(args.Length == 2)
+            {
+                if (!Directory.Exists(args[1]))
+                {
+                    _user.WriteTextBox($"Данная директория не существует {args[1]}");
+                    return;
+                }                    
+                directory = args[1];
+            }
+            else
+            {
+                directory = DirectoryMemory.CurrentDir;
+            }            
             _user.WriteTextBox($"Содержимое директории {directory}");// подумать над содержимым
             _user.WriteTreeViewDirectory(directory);
         }

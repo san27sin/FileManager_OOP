@@ -65,7 +65,9 @@ namespace FileManager_OOP_WinForm
 
             try
             {
+                Program.frm.richTextBox1.Text = "";
                 command.Execute(args);//идет выполнение команды
+                Program.frm.textBox1.Text = "";
             }
             catch (Exception error)
             {

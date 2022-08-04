@@ -12,11 +12,11 @@ using System.Windows.Forms;
 namespace FileManager_OOP_WinForm
 {
     public partial class Form1 : Form
-    {
-       
+    {       
         public Form1()
         {
             InitializeComponent();
+            richTextBox1.Text = $"Текущая директория {}";
             textBox1.KeyUp += TextBox1_KeyUp;
         }
 
@@ -41,16 +41,6 @@ namespace FileManager_OOP_WinForm
             var console_ui = new WinFormUserInterface(command);
             var manager = new FileManagerLogic(console_ui);//если класс наследуется от интерфейса то его можно вставлять как тип этого интерфейса
             manager.Start();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
