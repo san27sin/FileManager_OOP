@@ -16,7 +16,8 @@ namespace FileManager_OOP_WinForm
         public Form1()
         {
             InitializeComponent();
-            richTextBox1.Text = $"Текущая директория {}";
+            DirectoryMemory.DirectoryCheck();
+            richTextBox1.Text = $"Текущая директория {DirectoryMemory.CurrentDir}";
             textBox1.KeyUp += TextBox1_KeyUp;
         }
 

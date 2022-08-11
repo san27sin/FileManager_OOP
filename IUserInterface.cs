@@ -11,8 +11,8 @@ namespace FileManager_OOP_WinForm
     {
         void WriteTreeViewDirectory(string dir);//умеет писать строку
         void WriteTextBox(string str);
-        void DirectoryCheck();
-        void DirectorySerialize();
         string Read();//умеет читать
+        string FormatBytes(long bytes);
+        IEnumerable<string> SafeEnumerateFiles(string path, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly);
     }
 }

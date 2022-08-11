@@ -22,7 +22,12 @@ namespace FileManager_OOP_WinForm
             var help_command = new Commands.HelpCommand(user, this);
             var quit_command = new Commands.QuitCommand(this);
             var cd_command = new Commands.ChangeDirectoryCommand(_user, this);
-
+            var mk_dir = new Commands.CreateDirectory(_user);
+            var touch_file = new Commands.CreateFile(_user);
+            var rm_dir = new Commands.DeleteDirectory(_user);
+            var rm_file = new Commands.DeleteFile(_user);
+            var info_file = new Commands.InfoFile(_user);
+            var attribute_file = new Commands.FileAttribute(_user);
 
             //Можно автоматизировать процесс заполнения командами словаря с помощью рефлексии
             Commands = new Dictionary<string, Commands.Base.FileManagerCommand>
@@ -35,7 +40,14 @@ namespace FileManager_OOP_WinForm
                 {"help", help_command },
                 {"quit",quit_command},
                 {"exit",quit_command},
-                {"cd", cd_command }
+                {"cd", cd_command },
+                {"mkdir", mk_dir },
+                {"touch",touch_file },
+                {"rmdir", rm_dir},
+                {"rm", rm_file},
+                {"unlink", rm_file},
+                {"info", info_file},
+                {"chat", attribute_file}
             };
         }
 
@@ -59,9 +71,8 @@ namespace FileManager_OOP_WinForm
             {
                 _user.WriteTextBox($"Неизвестная команда {command}");
                 _user.WriteTextBox("Для справки введите help");
+                return;
             }
-
-            _user.DirectoryCheck();//проверка директории
 
             try
             {

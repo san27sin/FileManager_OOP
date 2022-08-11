@@ -46,13 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\FileAttribute.cs" />
     <Compile Include="Commands\Base\FileManagerCommand.cs" />
     <Compile Include="Commands\ChangeDirectoryCommand.cs" />
+    <Compile Include="Commands\CreateDirectory.cs" />
+    <Compile Include="Commands\CreateFile.cs" />
+    <Compile Include="Commands\DeleteDirectory.cs" />
+    <Compile Include="Commands\DeleteFile.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\InfoFile.cs" />
     <Compile Include="Commands\ListDrivesCommand.cs" />
     <Compile Include="Commands\PrintDirectoryFilesCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
-    <Compile Include="Directorymemory.cs" />
+    <Compile Include="Commands\RenameDirectory.cs" />
+    <Compile Include="Commands\RenameFile.cs" />
+    <Compile Include="DirectoryMemory.cs" />
     <Compile Include="WinFormUserInterface.cs" />
     <Compile Include="FileManagerLogic.cs" />
     <Compile Include="Form1.cs">

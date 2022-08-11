@@ -36,8 +36,11 @@ namespace FileManager_OOP_WinForm.Commands
             else
             {
                 directory = DirectoryMemory.CurrentDir;
-            }            
-            _user.WriteTextBox($"Содержимое директории {directory}");// подумать над содержимым
+            }
+            long dirSize = _user.SafeEnumerateFiles(directory, "*.*", SearchOption.AllDirectories).Sum(n => new FileInfo(n).Length);
+
+
+            _user.WriteTextBox($"Содержимое директории {directory}\nРазмер папки \"{Path.GetFileName(directory)}\" {_user.FormatBytes(dirSize)}");// подумать над содержимым
             _user.WriteTreeViewDirectory(directory);
         }
     }

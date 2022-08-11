@@ -18,11 +18,12 @@ namespace FileManager_OOP_WinForm
             return _commandLine;
         }
 
+
         public void WriteTreeViewDirectory(string dir)
         {
-            DirectoryInfo di = new DirectoryInfo(dir);
-            TreeNode tds = Program.frm.treeView1.Nodes.Add(di.Name);
-            tds.Tag = di.FullName;
+            //DirectoryInfo di = new DirectoryInfo(dir);
+            TreeNode tds = Program.frm.treeView1.Nodes.Add(Path.GetFileName(dir));
+            tds.Tag = dir;
             tds.StateImageIndex = 0;
             LoadFiles(dir, tds);
             LoadSubDirectories(dir, tds);
@@ -35,7 +36,6 @@ namespace FileManager_OOP_WinForm
             // Loop through them to see if they have any other subdirectories  
             foreach (string subdirectory in subdirectoryEntries)
             {
-
                 DirectoryInfo di = new DirectoryInfo(subdirectory);
                 TreeNode tds = td.Nodes.Add(di.Name);
                 tds.StateImageIndex = 0;
@@ -44,6 +44,8 @@ namespace FileManager_OOP_WinForm
                 LoadSubDirectories(subdirectory, tds);
             }
         }
+
+
 
         private void LoadFiles(string dir, TreeNode td)
         {
@@ -59,49 +61,67 @@ namespace FileManager_OOP_WinForm
             }
         }
 
-        private void FileTree(TreeNode dirNode, DirectoryInfo dir)
+        public IEnumerable<string> SafeEnumerateFiles(string path, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
         {
-            try
+            var dirs = new Stack<string>();
+            dirs.Push(path);
+
+            while (dirs.Count > 0)
             {
-                var files_count = 0;
-                long total_length = 0;
-                foreach (var file in dir.EnumerateFiles())
+                string currentDirPath = dirs.Pop();
+                if (searchOption == SearchOption.AllDirectories)
                 {
-                    TreeNode fileNode = new TreeNode { Text = file.Name };
-                    dirNode.Nodes.Add(fileNode);
-                    files_count++;
-                    total_length += file.Length;
+                    try
+                    {
+                        string[] subDirs = Directory.GetDirectories(currentDirPath);
+                        foreach (string subDirPath in subDirs)
+                        {
+                            dirs.Push(subDirPath);
+                        }
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        continue;
+                    }
+                    catch (DirectoryNotFoundException)
+                    {
+                        continue;
+                    }
+                }
+
+                string[] files = null;
+                try
+                {
+                    files = Directory.GetFiles(currentDirPath, searchPattern);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    continue;
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    continue;
+                }
+
+                foreach (string filePath in files)
+                {
+                    yield return filePath;
                 }
             }
-            catch (Exception ex) { }
         }
 
-
-        public void DirectoryCheck()
+        public string FormatBytes(long bytes)
         {
-            if (File.Exists(Directory.GetCurrentDirectory() + "/directory.dat"))
+            string[] Suffix = { "B", "KB", "MB", "GB", "TB" };
+            int i;
+            double dblSByte = bytes;
+            for (i = 0; i < Suffix.Length && bytes >= 1024; i++, bytes /= 1024)
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                using (FileStream fs = new FileStream("directory.dat", FileMode.OpenOrCreate))
-                {
-                    DirectoryMemory.CurrentDir = formatter.Deserialize(fs) as string;
-                }
+                dblSByte = bytes / 1024.0;
             }
-            else
-            {
-                DirectoryMemory.CurrentDir = Directory.GetCurrentDirectory();
-            }
-        }
 
-        public void DirectorySerialize()
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("directory.dat", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, DirectoryMemory.CurrentDir);
-            }
+            return String.Format("{0:0.##} {1}", dblSByte, Suffix[i]);
         }
-
 
         public void WriteTextBox(string str)
         {

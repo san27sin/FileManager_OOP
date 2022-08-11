@@ -39,7 +39,7 @@ namespace FileManager_OOP_WinForm.Commands
                     _user.WriteTextBox("Невозможно подняться выше по дереву каталогов");
                     return;
                 }
-                _user.DirectorySerialize();//сохраняем директорию
+                DirectoryMemory.DirectorySerialize();//сохраняем директорию
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace FileManager_OOP_WinForm.Commands
             }
             DirectoryMemory.CurrentDir = dir_path;
             _user.WriteTextBox($"Текущая директория изменена на {dir_path}");
-            _user.DirectorySerialize();//сохраняем директорию
+            DirectoryMemory.DirectorySerialize();//сохраняем директорию
         }
     }
 }
