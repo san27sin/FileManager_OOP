@@ -37,15 +37,16 @@ namespace FileManager_OOP_WinForm
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(559, 475);
+            this.button1.Location = new System.Drawing.Point(559, 472);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 32);
+            this.button1.Size = new System.Drawing.Size(97, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "поиск";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // treeView1
             // 
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(668, 310);
@@ -53,13 +54,16 @@ namespace FileManager_OOP_WinForm
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 478);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 472);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(526, 26);
+            this.textBox1.Size = new System.Drawing.Size(526, 30);
             this.textBox1.TabIndex = 2;
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.Location = new System.Drawing.Point(0, 316);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(668, 150);

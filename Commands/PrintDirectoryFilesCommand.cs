@@ -37,6 +37,7 @@ namespace FileManager_OOP_WinForm.Commands
             {
                 directory = DirectoryMemory.CurrentDir;
             }
+            Program.frm.treeView1.Nodes.Clear();
             long dirSize = _user.SafeEnumerateFiles(directory, "*.*", SearchOption.AllDirectories).Sum(n => new FileInfo(n).Length);
 
 

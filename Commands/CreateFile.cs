@@ -11,7 +11,7 @@ namespace FileManager_OOP_WinForm.Commands
     {
         private readonly IUserInterface _user;
 
-        public override string Description => "Создания директории";
+        public override string Description => "Создания файла";
 
         public CreateFile(IUserInterface user) { _user = user; }
 

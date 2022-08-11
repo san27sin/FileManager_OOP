@@ -33,7 +33,12 @@ namespace FileManager_OOP_WinForm.Commands
 
         //Переделать один метод под другие
 
-        public override string Description => "Вывод содержимого дериктории";
+        public override string Description => "Изменение атрибутов файла:\n" +
+            "           + добавить / - удалить\n" +
+            "           r только для чтения\n" +
+            "           h спрятать\n" +
+            "           ar заархивировать\n" +
+            "           com скомпрессовать";
         //подумать над вызовом метода разово, а не постоянно
         public override void Execute(string[] args)
         {

@@ -21,13 +21,13 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
-            /*
-            _user.WriteListView("Файловый менеджер поддерживает следующие команды:");
+            StringBuilder text = new StringBuilder("Файловый менеджер поддерживает следующие команды:\n");
             foreach(var command in _fileManager.Commands)
             {
-                _user.WriteListView($"    {command.Key}\t{command.Value.Description}");
+                text.Append($"    {command.Key}\t{command.Value.Description}\n");
             }
-            */
+            _user.WriteTextBox(text.ToString());
+           
         }
     }
 }

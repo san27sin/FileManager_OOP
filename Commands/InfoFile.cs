@@ -32,7 +32,7 @@ namespace FileManager_OOP_WinForm.Commands
 
         //Переделать один метод под другие
                        
-        public override string Description => "Вывод содержимого дериктории";
+        public override string Description => "Вывод информации о файле";
         //подумать над вызовом метода разово, а не постоянно
         public override void Execute(string[] args)
         {

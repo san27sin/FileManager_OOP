@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FileManager_OOP_WinForm.Commands.Base.FileManagerCommand" Collapsed="true">
+    <Position X="36.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\FileManagerCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.ChangeDirectoryCommand" Collapsed="true">
+    <Position X="27.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ChangeDirectoryCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.CreateDirectory" Collapsed="true">
+    <Position X="38.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CreateDirectory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.CreateFile" Collapsed="true">
+    <Position X="45.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CreateFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.DeleteDirectory" Collapsed="true">
+    <Position X="49.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DeleteDirectory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.DeleteFile" Collapsed="true">
+    <Position X="25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DeleteFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.FileAttribute" Collapsed="true">
+    <Position X="31.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEwAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\FileAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.HelpCommand" Collapsed="true">
+    <Position X="34" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAYAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\HelpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.InfoFile" Collapsed="true">
+    <Position X="43" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAADAQAAgAAQCACAAAQAAAAAAAIAAIAAAgAAAAAA=</HashCode>
+      <FileName>Commands\InfoFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.ListDrivesCommand" Collapsed="true">
+    <Position X="47.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ListDrivesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.PrintDirectoryFilesCommand" Collapsed="true">
+    <Position X="22.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAYAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\PrintDirectoryFilesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.QuitCommand" Collapsed="true">
+    <Position X="29.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\QuitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.RenameDirectory" Collapsed="true">
+    <Position X="36.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RenameDirectory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Commands.RenameFile" Collapsed="true">
+    <Position X="40.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RenameFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.DirectoryMemory" Collapsed="true">
+    <Position X="46.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>DirectoryMemory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.FileManagerLogic" Collapsed="true">
+    <Position X="44.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileManagerLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Form1" Collapsed="true">
+    <Position X="48.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAIAACAAAAAAAACAAAACAAAIAAAAEEAQAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.Program" Collapsed="true">
+    <Position X="52.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileManager_OOP_WinForm.WinFormUserInterface" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="52.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABAAAQAACAACAAABAAgAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>WinFormUserInterface.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="FileManager_OOP_WinForm.IUserInterface" Collapsed="true">
+    <Position X="52.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABABAAAQAAAAACAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

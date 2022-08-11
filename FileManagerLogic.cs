@@ -76,9 +76,9 @@ namespace FileManager_OOP_WinForm
 
             try
             {
-                Program.frm.richTextBox1.Text = "";
+                Program.frm.richTextBox1.Clear();
                 command.Execute(args);//идет выполнение команды
-                Program.frm.textBox1.Text = "";
+                Program.frm.textBox1.Clear();
             }
             catch (Exception error)
             {
