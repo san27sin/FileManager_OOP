@@ -31,7 +31,7 @@ namespace FileManager_OOP_WinForm.Commands
                     _user.WriteTextBox("Файл с таким именем уже существует!");
                     return;
                 }
-                File.Create(Path.Combine(DirectoryMemory.CurrentDir, nameDir));
+                File.Create(Path.Combine(DirectoryMemory.CurrentDir, nameDir)).Dispose();
                 _user.WriteTextBox($"Создан файл {nameDir}");
             }
             catch (Exception ex)
