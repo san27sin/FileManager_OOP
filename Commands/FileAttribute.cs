@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    public class FileAttribute : Base.FileManagerCommand
+    sealed public class FileAttribute : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
         public Dictionary<string, FileAttributes> _CommandAttribute { get; set; }
-        FileAttributes _attribute;
+        private FileAttributes _attribute;
 
         public FileAttribute(IUserInterface userInterface)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    class DeleteDirectory : Base.FileManagerCommand
+    sealed public class DeleteDirectory : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
 
@@ -37,7 +37,7 @@ namespace FileManager_OOP_WinForm.Commands
 
                 _user.WriteTextBox($"Директория \"{nameDir}\" удалена");
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
                 _user.WriteTextBox(ex.Message);
             }

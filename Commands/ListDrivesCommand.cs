@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    public class ListDrivesCommand : Base.FileManagerCommand//класс работает с дисками
+    sealed public class ListDrivesCommand : Base.FileManagerCommand//класс работает с дисками
     {
         //этой команде нужен тоже интерфейс
         private readonly IUserInterface _user ;

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    class PrintDirectoryFilesCommand : Base.FileManagerCommand
+    sealed public class PrintDirectoryFilesCommand : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
         private readonly FileManagerLogic _fileManager;

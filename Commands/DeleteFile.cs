@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    class DeleteFile : Base.FileManagerCommand
+    sealed public class DeleteFile : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
 

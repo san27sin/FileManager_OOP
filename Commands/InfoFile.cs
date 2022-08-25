@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    class InfoFile : Base.FileManagerCommand
+    sealed public class InfoFile : Base.FileManagerCommand
     {
         private readonly IUserInterface _user;
         private int _cWords;

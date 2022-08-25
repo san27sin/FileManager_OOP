@@ -15,7 +15,7 @@ namespace FileManager_OOP_WinForm
         public static string CurrentDir { get; set; }
 
 
-        static public void DirectoryCheck()
+        public static void DirectoryCheck()
         {
             if (File.Exists(Directory.GetCurrentDirectory() + "/directory.dat"))
             {
@@ -31,7 +31,7 @@ namespace FileManager_OOP_WinForm
             }
         }
 
-        static public void DirectorySerialize()
+        public static void DirectorySerialize()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("directory.dat", FileMode.OpenOrCreate))

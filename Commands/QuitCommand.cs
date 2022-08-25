@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    public class QuitCommand : Base.FileManagerCommand
+    sealed public class QuitCommand : Base.FileManagerCommand
     {
         private readonly FileManagerLogic _fileManager;
         public override string Description => "Выход";

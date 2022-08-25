@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace FileManager_OOP_WinForm
 {
+    /// <summary>
+    /// класс реализующий интерфейс
+    /// </summary>
     public class WinFormUserInterface : IUserInterface
     {
         private string _commandLine;
@@ -49,7 +52,8 @@ namespace FileManager_OOP_WinForm
 
         private void LoadFiles(string dir, TreeNode td)
         {
-            string[] Files = Directory.GetFiles(dir, "*.*");
+            IEnumerable<string> Files = Directory.EnumerateFiles(dir, "*.*");//коллекцию лучше использовать из-за экномоии времени и памяти 
+
 
             // Loop through them to see files  
             foreach (string file in Files)
@@ -117,10 +121,10 @@ namespace FileManager_OOP_WinForm
             double dblSByte = bytes;
             for (i = 0; i < Suffix.Length && bytes >= 1024; i++, bytes /= 1024)
             {
-                dblSByte = bytes / 1024.0;
+                dblSByte = bytes / 1024;
             }
 
-            return String.Format("{0:0.##} {1}", dblSByte, Suffix[i]);
+            return $"{dblSByte:0.##} {Suffix[i]}";
         }
 
         public void WriteTextBox(string str)

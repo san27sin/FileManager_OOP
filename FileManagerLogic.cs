@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm
 {
+    /// <summary>
+    /// Основная логика программы
+    /// </summary>
     public class FileManagerLogic
     {
         private readonly IUserInterface _user;//взаимодействие с пользователем
