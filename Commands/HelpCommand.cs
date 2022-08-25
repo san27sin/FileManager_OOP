@@ -21,11 +21,14 @@ namespace FileManager_OOP_WinForm.Commands
 
         public override void Execute(string[] args)
         {
-            StringBuilder text = new StringBuilder("Файловый менеджер поддерживает следующие команды:\n");
-            foreach(var command in _fileManager.Commands)
-            {
-                text.Append($"    {command.Key}\t{command.Value.Description}\n");
-            }
+            var text = _fileManager.Commands.Aggregate(
+                new StringBuilder("Файловый менеджер поддерживает следующие команды:").AppendLine(),
+                (text, command) => text
+                    .Append("    ")
+                    .Append(command.Key)
+                    .Append('\t')
+                    .AppendLine(command.Value.Description),
+                text => text.ToString());
             _user.WriteTextBox(text.ToString());
            
         }
