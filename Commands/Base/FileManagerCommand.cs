@@ -8,7 +8,8 @@ namespace FileManager_OOP_WinForm.Commands.Base
 {
     public abstract class FileManagerCommand
     {
-        public abstract string Description { get; }//каждый класс должен иметь описание что именно команда делает
+        /// <summary>каждый класс должен иметь описание что именно команда делает</summary>
+        public abstract string Description { get; }
         public abstract void Execute(string[] args);//заставляет комманду выполниться
     }
 }
