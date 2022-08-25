@@ -120,7 +120,7 @@ namespace FileManager_OOP_WinForm
                 dblSByte = bytes / 1024.0;
             }
 
-            return String.Format("{0:0.##} {1}", dblSByte, Suffix[i]);
+            return $"{dblSByte:0.##} {Suffix[i]}";
         }
 
         public void WriteTextBox(string str)
