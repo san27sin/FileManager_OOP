@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileManager_OOP_WinForm.Commands
 {
-    sealed public class ChangeDirectoryCommand : Base.FileManagerCommand
+    public sealed class ChangeDirectoryCommand : Base.FileManagerCommand
     {
         private readonly FileManagerLogic _fileManagerLogic;
         private readonly IUserInterface _user;
