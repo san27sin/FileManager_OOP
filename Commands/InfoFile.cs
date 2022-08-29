@@ -55,11 +55,10 @@ namespace FileManager_OOP_WinForm.Commands
             //Раписать атрибуты
             FileAttributes fileAt = File.GetAttributes(Path.Combine(DirectoryMemory.CurrentDir, file));
 
-            string line = null;
             using (var reader = new StreamReader(file))
             {
-                StringBuilder text = new StringBuilder();
-                while ((line = reader.ReadLine()) != null)
+                var text = new StringBuilder();
+                while (reader.ReadLine() is { } line)
                 {
                     _cWords += Regex.Matches(line, @"\b\w+\b").Count;
                     // _cParagraph += Regex.Matches(line, "[^\r\n]+((\r|\n|\r\n)[^\r\n]+)*").Count;
