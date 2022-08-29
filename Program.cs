@@ -8,6 +8,8 @@ namespace FileManager_OOP_WinForm
 {
     static class Program
     {
+        static public Form1 frm; 
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,8 @@ namespace FileManager_OOP_WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            frm = new Form1();
+            Application.Run(frm);
         }
     }
 }

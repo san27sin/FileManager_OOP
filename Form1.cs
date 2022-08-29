@@ -16,6 +16,8 @@ namespace FileManager_OOP_WinForm
         public Form1()
         {
             InitializeComponent();
+            DirectoryMemory.DirectoryCheck();
+            richTextBox1.Text = $"Текущая директория {DirectoryMemory.CurrentDir}";
             textBox1.KeyUp += TextBox1_KeyUp;
         }
 
@@ -25,6 +27,7 @@ namespace FileManager_OOP_WinForm
             {
                 ReadLine(textBox1.Text);
             }
+            //написать здесь историю комманд
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +37,11 @@ namespace FileManager_OOP_WinForm
 
         private void ReadLine(string command)
         {
-
+            //отсюда можно логику запустить
+            richTextBox1.ReadOnly = true;
+            var console_ui = new WinFormUserInterface(command);
+            var manager = new FileManagerLogic(console_ui);//если класс наследуется от интерфейса то его можно вставлять как тип этого интерфейса
+            manager.Start();
         }
     }
 }
